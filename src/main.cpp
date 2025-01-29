@@ -30,7 +30,7 @@ void setup(){
   display.setTextSize(2);
   display.setTextColor(SH110X_WHITE);
   display.setCursor(0, 0);
-  display.println("Hello, world!");
+  display.println("Power Up");
   display.display(); 
 }
 
@@ -44,19 +44,23 @@ void readTags() {
   }
 
   if (value != 0){
-    // display.setTextSize(2);
-    // display.setCursor(0,0);   //set the cursor to the first column and the first row
-    // display.println("RFID Tag:");
-    // //display.setCursor(0,20);  //set the cursor to the first column and the second row
-    // display.print(value);
-    // display.display();
-    // delay(3000);
+		display.clearDisplay();
+    display.setTextSize(2);
+		display.setTextColor(SH110X_WHITE);
+    display.setCursor(0,0);   //set the cursor to the first column and the first row
+    display.println("RFID Tag:");
+    display.setCursor(0,20);  //set the cursor to the first column and the second row
+    display.print(value);
+    display.display();
+    delay(5000);
   }
   else{
-    // display.clearDisplay();
-    // display.setCursor(0,0);   //set the cursor to the first column and the first row
-    // display.println("Place RFID Tag!");
-    // display.display();
+    display.clearDisplay();
+		display.setTextSize(2);
+  	display.setTextColor(SH110X_WHITE);
+    display.setCursor(0,0);   //set the cursor to the first column and the first row
+    display.println("Place RFID.....");
+    display.display();
   }                               
   // rdm6300.end();                                   //IMPORTANT- removes multiple read
   // rdm6300.begin(RDM6300_RX_PIN);                   //IMPORTANT- removes multiple read
