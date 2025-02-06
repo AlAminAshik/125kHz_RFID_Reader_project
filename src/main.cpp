@@ -10,7 +10,7 @@
 #define OLED_RESET -1
 Adafruit_SH1106G display = Adafruit_SH1106G(128, 64, &Wire, OLED_RESET);
 
-#define RDM6300_RX_PIN 16                        //rfid module to arduino pin 2(Rx)
+#define RDM6300_RX_PIN 2                        //rfid module to arduino pin 2(Rx)
 Rdm6300 rdm6300;
 
 int value = 0;
@@ -29,8 +29,6 @@ void setup(){
   display.clearDisplay();
   display.setTextSize(2);
   display.setTextColor(SH110X_WHITE);
-  display.setCursor(0, 0);
-  display.println("Power Up");
   display.display(); 
 }
 
